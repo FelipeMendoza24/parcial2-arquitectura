@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/99b061b4-1962-42c9-af28-beb306e3f724)Parcial #2 Felipe Mendoza y Diego Avila
+Parcial #2 Felipe Mendoza y Diego Avila
 
 1. a) Escriba explícitamente en eI readme del aplicativo como hacer correr eI aplicativo de manera local usando una base de datos mysql (con docker) con las conexiones especificadas en el archivo application.yml
 
