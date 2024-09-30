@@ -35,5 +35,16 @@ Y usando el MySQL
 
   ![image](https://github.com/user-attachments/assets/1ed00e56-e985-4997-b302-54627c9b4c1d)
 
+5. Especifique en el archivo README.MD el comando para crear la imagen de docker del proyecto actual y ejecutar dicha imagen
 
+Para crear la imagen, se debe utilizar el comando:
 
+"docker build -t dockerparcial ."
+
+El docker build que se encargará de crear la imagen y -t mas el nombre que asignara el tag.
+
+y para ejecutar la imagen con el siguiente comando: 
+
+"docker run -p 8080:8080 dockerparcial"
+
+Docker run que ejecuta el contenedor a partir de una imagen, -p mapea el puerto 8080 para acceder a la app.
