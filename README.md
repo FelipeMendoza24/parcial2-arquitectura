@@ -48,3 +48,7 @@ y para ejecutar la imagen con el siguiente comando:
 "docker run -p 8080:8080 dockerparcial"
 
 Docker run que ejecuta el contenedor a partir de una imagen, -p mapea el puerto 8080 para acceder a la app.
+
+## JACOCO:
+<img width="1208" alt="Screenshot 2024-09-30 at 9 14 56 AM" src="https://github.com/user-attachments/assets/2b3ad12e-efa8-4803-9dd1-ae23f4996229">
+
