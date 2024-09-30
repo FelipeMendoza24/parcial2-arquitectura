@@ -44,6 +44,8 @@ jacocoTestReport {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.mockito:mockito-core:4.0.0' // Use the latest version
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.8.0' // Use the latest version
 	implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.31'
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.2'
 	compileOnly 'org.projectlombok:lombok'
@@ -54,4 +56,25 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+test {
+	finalizedBy jacocoTestReport // report is always generated after tests run
+}
+jacocoTestReport {
+	reports {
+		xml.required = true
+		html.required = true
+	}
+	afterEvaluate {
+		classDirectories.setFrom(
+				fileTree(dir: "${buildDir}/classes/java/main", exclude: [
+						'**/co/edu/unisabana/parcial/controller/**',
+						'**/co/edu/unisabana/parcial/repository/sql/**',
+						'**/co/edu/unisabana/parcial/service/model/**',
+						'**/co/edu/unisabana/parcial/service/port/**',
+						'**/co/edu/unisabana/parcial/service/model/CheckpointDAO.java',
+						'**/co/edu/unisabana/parcial/ParcialApplication.java'
+				])
+		)
+	}
 }
