@@ -5,13 +5,15 @@ import co.edu.unisabana.parcial.service.model.Checkin;
 import co.edu.unisabana.parcial.service.model.Checkout;
 import co.edu.unisabana.parcial.service.port.CheckpointPort;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class CheckpointService {
 
-  private CheckpointPort checkpointPort;
+  @Qualifier("checkpointRepositoryAdapter")
+  private final CheckpointPort checkpointPort;
 
   public void checkin(CheckpointDTO checkpoint) {
     if (checkpoint.dayOfMonth > 30 || checkpoint.dayOfMonth < 1) {
